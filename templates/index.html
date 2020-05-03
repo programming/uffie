@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Uffie allows you to set up a 'For Sale' landing page for your unused domains &#45; NO REGISTRATION REQUIRED!" />
+    <title>Uffie Templates</title>
+    <link href="https://fonts.googleapis.com/css?family=Barlow:400,400i,600|Roboto+Mono:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <script src="https://js.stripe.com/v3"></script>
+</head>
+<body>
+<div class="min-h-screen flex flex-col">
+	  <nav class="navbar bg-red text-white pt-3 pb-2 md:pt-2 md:pb-0">
+      <div class="wrap flex flex-col md:flex-row items-center justify-between">
+        <section class="flex items-center pt-3 md:py-3">
+          <a class="navbar-logo" href="/"><img alt="Uffie" width="100" src="/assets/logo.png"></a>
+        </section>
+        <ul class="navbar-nav text-xl md:text-base flex flex-wrap items-center justify-center -mx-2 mt-2 md:mt-0">
+          <li><a href="/#getstarted">Get Started</a></li>
+          <li><a href="/templates">Templates</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="flex-1 flex flex-col">
+      <main class="bg-white">
+        <section class="wrap is-lg pt-16 pb-8">
+          <h1 class="h1 text-lg uppercase tracking-wider border-b mb-12">Uffie Templates</h1>
+          <div class="text-2xl md:text-3xl mb-8">
+            <p>Choose from our selection of modern and gorgeous landing page templates.</p>
+          </div>
+          <div class="flex flex-wrap -mx-8">
+            <div class="gallery">
+            <img src="/assets/templates/ava.png" alt="Ava" width="450" height="324">
+            <div class="desc">Ava</div>
+            </div>
+            <div class="gallery">
+            <img src="/assets/templates/ellie.png" alt="Ellie" width="450" height="324">
+            <div class="desc">Ellie</div>
+            </div>
+            <div class="gallery">
+            <img src="/assets/templates/blue.png" alt="Blue" width="450" height="324">
+            <div class="desc">Blue</div>
+            </div>
+            <div class="gallery">
+            <img src="/assets/templates/evelyn.png" alt="Evelyn" width="450" height="324">
+            <div class="desc">Evelyn</div>
+            </div>
+            <div class="gallery">
+            <img src="/assets/templates/florence.png" alt="Florence" width="450" height="324">
+            <div class="desc">Florence</div>
+            </div>
+            <div class="gallery">
+            <img src="/assets/templates/grace.png" alt="Grace" width="450" height="324">
+            <div class="desc">Grace</div>
+            </div>
+            <div class="gallery">
+            <img src="/assets/templates/ruby.png" alt="Ruby" width="450" height="324">
+            <div class="desc">Ruby</div>
+            </div>
+            <div class="gallery">
+            <img src="/assets/templates/venus.png" alt="Venus" width="450" height="324">
+            <div class="desc">Venus</div>
+            </div>
+          </div>
+          <span style="color:grey;font-size:x-small">Templates downloaded from <a href="https://cruip.com/" rel="nofollow" target="_blank">Cruip</a> with modifications.</span>
+        </section>
+
+<div class="bg-red text-white py-8 md:py-16" id="beta">
+    <div class="wrap is-lg">
+    <h2 class="text-2xl mr-2 mb-4 md:mb-0">...plus everything you need to start selling your domains for just $10 per year!</h2>
+        <div class="pt-8 text-xl pb-16">
+            <ul class="home-nutshell mb-12">
+                <li>Unlimited domains</li>
+                <li>Built-in contact form for prospective buyers</li>
+                <li>No commission</li>
+                <li>Automatic HTTPS (via Let's Encrypt)</li>
+                <li>Google Analytics integration</li>
+                <li>Removes all Uffie branding</li>
+            </ul>
+        </div>		
+        <div class="flex md:flex-row">
+            <div class="flex text-xl">
+		    <button class="button px-3 py-2 font-semibold" id="checkout-button-plan_GPr8WsSlY4dp2o" role="link">Sign Up</button>
+		    <div id="error-message"></div>
+		    <script>!function(){var e=Stripe("pk_live_jSaYKRvN7Qz2ZXRoUsv5XzY4");document.getElementById("checkout-button-plan_GPr8WsSlY4dp2o").addEventListener("click",function(){e.redirectToCheckout({items:[{plan:"plan_GPr8WsSlY4dp2o",quantity:1}],successUrl:"https://www.uffie.com",cancelUrl:"https://www.uffie.com"}).then(function(e){e.error&&(document.getElementById("error-message").textContent=e.error.message)})})}();</script>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<footer class="footer wrap flex flex-col-reverse md:flex-row items-start md:items-end text-sm text-grey pb-3 mt-8">
+        <section class="flex-1">&nbsp;</section>
+        <section class="hidden md:block"></section>
+        <section class="footer-menu flex-1 mb-2 md:mb-0"></section>
+        </footer>
+    </div>
+</body>
+</html>

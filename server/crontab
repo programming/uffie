@@ -1,0 +1,4 @@
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+0 */6 * * * sudo certbot certonly --nginx --keep --expand --redirect -q -n -w /var/www/uffie/server $(sed 's/^/-d /' domains.txt)

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Uffie allows you to set up a 'For Sale' landing page for your unused domains &#45; NO REGISTRATION REQUIRED!" />
+	<title>Setup Wizard - Uffie</title>
+    <link href="https://fonts.googleapis.com/css?family=Barlow:400,400i,600|Roboto+Mono:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <script src="https://js.stripe.com/v3"></script>
+    <script>function copyA(){const e=document.createElement("textarea");e.value=document.getElementById("aHelper").innerText,document.body.appendChild(e),e.select(),document.execCommand("copy"),document.body.removeChild(e),document.getElementById("aHelperText").innerText="Copied"}function copyCNAME(){const e=document.createElement("textarea");e.value=document.getElementById("cnameHelper").innerText,document.body.appendChild(e),e.select(),document.execCommand("copy"),document.body.removeChild(e),document.getElementById("cnameHelperText").innerText="Copied"}function copyTXT(){const e=document.createElement("textarea");e.value=document.getElementById("txtHelper").innerText,document.body.appendChild(e),e.select(),document.execCommand("copy"),document.body.removeChild(e),document.getElementById("txtHelperText").innerText="Copied"}</script>
+</head>
+<body>
+<div class="min-h-screen flex flex-col">
+	  <nav class="navbar bg-red text-white pt-3 pb-2 md:pt-2 md:pb-0">
+      <div class="wrap flex flex-col md:flex-row items-center justify-between">
+        <section class="flex items-center pt-3 md:py-3">
+          <a class="navbar-logo" href="/"><img alt="Uffie" width="100" src="/assets/logo.png"></a>
+        </section>
+        <ul class="navbar-nav text-xl md:text-base flex flex-wrap items-center justify-center -mx-2 mt-2 md:mt-0">
+          <li><a href="/#getstarted">Get Started</a></li>
+          <li><a href="/templates">Templates</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+<div class="flex-1 flex flex-col">
+	    <main class="bg-white">
+		    <section class="wrap is-lg pt-16 pb-8">
+			    <h1 class="h1 text-lg uppercase tracking-wider border-b mb-12">Setup Wizard</h1>
+                <div class="flex flex-wrap" style="padding-bottom:30px">Fill up the following form to generate the correct DNS records for your domain.</div>
+                <div class="flex flex-wrap">
+                    <form class="form-horizontal">
+						<!-- <div class="form-group">Where is your domain registered at?
+
+<select onchange="document.getElementById('registrarKB').innerHTML=(this.value);">
+  <option value="https://www.godaddy.com/help/manage-dns-zone-files-680">GoDaddy</option>
+  <option value="https://www.namecheap.com/support/knowledgebase/article.aspx/434/2237/how-do-i-set-up-host-records-for-a-domain">Namecheap</option>
+  <option value="https://www.dynadot.com/community/help/question/set-up-DNS">Dynadot</option>
+  <option value="https://kb.porkbun.com/article/54-how-to-use-a-records-to-point-your-domain-at-a-web-host">Porkbun</option>
+  <option value="https://www.name.com/support/articles/115004893508-Adding-an-A-record">Name.com</option>
+  <option value="https://docs.gandi.net/en/domain_names/common_operations/dns_records.html">Gandi</option>
+  <option value="http://www.networksolutions.com/support/how-to-manage-advanced-dns-records/">Network Solutions</option>
+</select>
+<div id="registrarKB">&nbsp;</div>
+                        </div> -->
+
+                        <div class="form-group">What is your domain name?
+                            <input type="text" id="domainInput" value="example.com" onchange="cnameValue();">
+						</div>
+						<div class="form-group">What is your contact email address?
+                            <input type="text" id="emailInput" value="john.doe@gmail.com" onchange="txtValue();">
+                        </div>
+						<div class="form-group">What is the minimum asking price for your domain name?
+                            <input type="number" id="priceInput" value="500" onchange="txtValue();">
+                        </div>
+						<div class="form-group">Are you a <strong>Uffie Pro</strong> member?
+                            <select id="proInput" onchange="txtValue();">
+                                <option value="1">Yes</option>
+                                <option value="0" selected>No</option>
+                            </select>
+                        </div>
+						<div class="form-group">What is your Google Analytics tracking ID? <sup>&nbsp;<strong>Pro</strong></sup>
+                            <input type="text" id="gaInput" value="UA-XXXXX-Y" onchange="txtValue();" disabled>
+                        </div>
+						<div class="form-group">What is your preferred landing page template design? <sup>&nbsp;<strong>Pro</strong></sup>
+                            <select id="templateInput" onchange="txtValue();" disabled>
+                                <option value="ava">Ava</option>
+                                <option value="ellie">Ellie</option>
+                                <option value="blue">Blue</option>
+                                <option value="evelyn">Evelyn</option>
+                                <option value="florence">Florence</option>
+                                <option value="grace">Grace</option>
+                                <option value="ruby">Ruby</option>
+                                <option value="venus">Venus</option>
+                            </select>
+                        </div>
+	                </form>
+                    <p><img width="50%" id="templatePreview" src="/assets/templates/ava.png" /></p>                    
+                </div>
+
+                <article class="markup" style="padding-top:30px;padding-bottom:30px">
+                    <table>
+                        <thead>
+                            <tr>
+                            <th>Name/Host/Alias</th>
+                            <th style="text-align: left;">Record Type</th>
+                            <th style="text-align: left;">Time to Live (TTL)</th>
+                            <th style="padding-right:420px;text-align: left;">Value/Answer/Destination</th>                    
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>@</td>
+                            <td style="text-align: left;">A</td>
+                            <td style="text-align: left;">3600</td>
+                            <td style="text-align: left;"><span id="aHelper" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default'" onclick="copyA()">172.245.118.41</span> <span id="aHelperText"></span></td>
+                            </tr>
+                            <tr>
+                            <td>www</td>
+                            <td style="text-align: left;">CNAME</td>
+                            <td style="text-align: left;">3600</td>
+                            <td style="text-align: left;"><span id="cnameHelper" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default'" onclick="copyCNAME()">example.com</span> <span id="cnameHelperText"></span></td>
+                            </tr>
+                            <tr>
+                            <td>@</td>
+                            <td style="text-align: left;">TXT</td>
+                            <td style="text-align: left;">3600</td>
+                            <td style="text-align: left;"><span id="txtHelper" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default'" onclick="copyTXT()">email=john.doe@gmail.com&price=500</span> <span id="txtHelperText"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+
+<script>function ipMouseOver(){document.getElementById("aHelperText").innerHTML="Copy",document.getElementById("aHelperText").style.display="inline"}function ipMouseOut(){document.getElementById("aHelperText").style.display="none"}function cnameMouseOver(){document.getElementById("cnameHelperText").innerHTML="Copy",document.getElementById("cnameHelperText").style.display="inline"}function cnameMouseOut(){document.getElementById("cnameHelperText").style.display="none"}function txtMouseOver(){document.getElementById("txtHelperText").innerHTML="Copy",document.getElementById("txtHelperText").style.display="inline"}function txtMouseOut(){document.getElementById("txtHelperText").style.display="none"}document.getElementById("aHelper").addEventListener("mouseover",ipMouseOver),document.getElementById("aHelper").addEventListener("mouseout",ipMouseOut),document.getElementById("cnameHelper").addEventListener("mouseover",cnameMouseOver),document.getElementById("cnameHelper").addEventListener("mouseout",cnameMouseOut),document.getElementById("txtHelper").addEventListener("mouseover",txtMouseOver),document.getElementById("txtHelper").addEventListener("mouseout",txtMouseOut);var changePreview=function(){document.getElementById("templatePreview").src="/assets/templates/"+this.options[this.selectedIndex].value+".png"},templateList=document.getElementById("templateInput");function cnameValue(){document.getElementById("cnameHelper").innerHTML=document.getElementById("domainInput").value.replace(/^(https?|ftp):\/\//,"").replace("www.","")}function txtValue(){var e=document.getElementById("emailInput").value,t=document.getElementById("priceInput").value,n=document.getElementById("proInput").value,d=document.getElementById("gaInput").value,l=document.getElementById("templateInput").value;"0"===n&&(document.getElementById("gaInput").disabled=!0,document.getElementById("templateInput").disabled=!0),e=e?"email="+e:"email=john.doe@gmail.com",t=t?"&price="+t:"",d&&"1"===n?(document.getElementById("gaInput").disabled=!1,d="&ga="+d):d="",l&&"1"===n?(document.getElementById("templateInput").disabled=!1,l="&template="+l):l="";var m=e+t+d+l;document.getElementById("txtHelper").innerText=encodeURI(m)}templateList.addEventListener("change",changePreview,!1);</script>
+
+<div class="bg-red text-white py-8 md:py-16" id="beta">
+    <div class="wrap is-lg">
+    <h2 class="text-2xl mr-2 mb-4 md:mb-0">Ready to take it to the next level?</h2>
+        <div class="pt-8 text-xl pb-16">
+            <ul class="home-nutshell mb-12">
+                <li>Unlimited domains</li>
+                <li>Built-in contact form for prospective buyers</li>
+                <li>No commission</li>
+                <li>Automatic HTTPS (via Let's Encrypt)</li>
+                <li>Google Analytics integration</li>
+                <li>Removes all Uffie branding</li>
+                <li>Beautiful, responsive landing page templates</li>
+            </ul>
+        </div>
+        <div class="flex md:flex-row">
+            <div class="flex text-xl">
+				<button class="button px-3 py-2 font-semibold" onclick="window.location.href = 'https://uffie.com/pro/';">Learn More</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<footer class="footer wrap flex flex-col-reverse md:flex-row items-start md:items-end text-sm text-grey pb-3 mt-8">
+        <section class="flex-1">&nbsp;</section>
+        <section class="hidden md:block"></section>
+        <section class="footer-menu flex-1 mb-2 md:mb-0"></section>
+        </footer>
+    </div>
+</body>
+</html>

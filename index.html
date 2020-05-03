@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Free sales landing page for your domains - Uffie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Uffie allows you to set up a 'For Sale' landing page for your unused domains &#45; NO REGISTRATION REQUIRED!" />
+    <link href="https://fonts.googleapis.com/css?family=Barlow:400,400i,600|Roboto+Mono:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <script src="https://js.stripe.com/v3"></script>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+            <div class="flex-1 flex flex-col">
+                <nav class="bg-red text-white">
+                    <div class="wrap is-lg">
+                        <ul class="home-nav pt-3 flex flex-wrap justify-end">
+                            <li><a href="#getstarted">Get Started</a></li>
+                            <li><a href="templates">Templates</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        <section class="flex-1 bg-red text-white pt-16 pb-8">
+            <div class="wrap is-lg">
+                <h1 class="home-logo mb-8" title="Uffie"><img alt="Uffie" width="150" src="assets/logo.png"></h1>
+                <p class="font-semibold text-3xl md:text-4xl mb-12 leading-tight">The simplest way to set up a &apos;For Sale&apos; landing page for all your unused domain names.</p>
+            </div>
+        </section>
+        <div class="bg-white">
+            <div class="wrap is-lg">
+                <p class="text-3xl tracking-wide mb-4 pt-8">Free forever and you don't even have to register an account to get started. <!-- <a class="text-red font-bold" target="_blank" href="#" rel="nofollow">View sample &#xbb;</a> --></p>
+                <div class="pt-8 text-xl pb-16">
+                    <ul class="home-nutshell mb-12">
+                        <li>Unlimited domains</li>
+                        <li>Built-in contact form for prospective buyers</li>
+                        <li>No commission</li>
+                        <li>Automatic HTTPS (via Let's Encrypt)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="py-12" id="getstarted">
+            <div class="wrap is-lg text-sm tracking-wide">
+                <div class="sm:-mx-4 md:-mx-12 sm:flex">
+                    <article class="markup">
+                        <h1>Enter these DNS records at your domain host</h1>
+                        <p>Replace the values below in red with your own. Make sure you follow the specific instructions for your domain host when entering these record values.</p>
+                        <p>Wait for the DNS changes to take effect across the internet. Do note that DNS propagation may take up to 24 hours.</p>
+                        <p>That's it!</p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                <th>Name/Host/Alias</th>
+                                <th style="text-align: left;">Record Type</th>
+                                <th style="text-align: left;">Time to Live (TTL)</th>
+                                <th style="padding-right:290px;text-align: left;">Value/Answer/Destination</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td>@</td>
+                                <td style="text-align: left;">A</td>
+                                <td style="text-align: left;">3600</td>
+                                <td style="text-align: left;"><span id="ipHelper1" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default'" onclick="copyIP(this.id)">107.173.51.164</span>
+								<span id="helperText1" class="helperText"></span></td>
+                                </tr>
+                                <tr>
+                                <td>www</td>
+                                <td style="text-align: left;">A</td>
+                                <td style="text-align: left;">3600</td>
+                                <td style="text-align: left;"><span id="ipHelper2" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default'" onclick="copyIP(this.id)">107.173.51.164</span>
+								<span id="helperText2" class="helperText"></span></td>
+                                </tr>
+                                <tr>
+                                <td>uffie</td>
+                                <td style="text-align: left;">TXT</td>
+                                <td style="text-align: left;">3600</td>
+                                <td style="text-align: left;">email=<span class="txtHelper" id="emailHelper">john.doe@gmail.com</span>&price=<span class="txtHelper" id="priceHelper">500</span>
+								<span id="helperText3" class="helperText"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <div class="bg-red text-white py-8 md:py-16" id="beta">
+            <div class="wrap is-lg">
+                <h2 class="text-2xl mr-2 mb-4 md:mb-0">
+                    Need something more?<br />
+                    For just $10 per year, gain access to the following additional features.					
+                </h2>
+                <div class="pt-8 text-xl pb-16">
+                    <ul class="home-nutshell mb-12">
+                        <li>Google Analytics integration</li>
+                        <li>Removes all Uffie branding</li>
+                        <li>Beautiful, responsive landing page templates</a>
+                        <!-- <li>Payment integration (instant checkout with Escrow.com)</li> -->
+                    </ul>
+                </div>
+                <div class="flex md:flex-row">
+                    <div class="flex text-xl">
+			    <button class="button px-3 py-2 font-semibold" id="checkout-button-plan_GPr8WsSlY4dp2o" role="link">Sign Up</button>
+			    <div id="error-message"></div>
+			    <script>!function(){var e=Stripe("pk_live_jSaYKRvN7Qz2ZXRoUsv5XzY4");document.getElementById("checkout-button-plan_GPr8WsSlY4dp2o").addEventListener("click",function(){e.redirectToCheckout({items:[{plan:"plan_GPr8WsSlY4dp2o",quantity:1}],successUrl:"https://www.uffie.com",cancelUrl:"https://www.uffie.com"}).then(function(e){e.error&&(document.getElementById("error-message").textContent=e.error.message)})})}();</script>
+                    </div>
+                </div>
+            </div>
+        </div>		
+        <footer class="footer wrap flex flex-col-reverse md:flex-row items-start md:items-end text-sm text-grey pb-3 mt-8">
+        <section class="flex-1">&nbsp;</section>
+        <section class="hidden md:block"></section>
+        <section class="footer-menu flex-1 mb-2 md:mb-0"></section>
+        </footer>
+    </div>
+</body>
+</html>
+<script>function copyIP(e){const t=document.createElement("textarea");t.value="107.173.51.164",document.body.appendChild(t),t.select(),document.execCommand("copy"),document.body.removeChild(t),"ipHelper1"===e&&(document.getElementById("helperText1").innerText="Copied"),"ipHelper2"===e&&(document.getElementById("helperText2").innerText="Copied")}function mouseOver1(){document.getElementById("helperText1").innerHTML="Copy",document.getElementById("helperText1").style.display="inline"}function mouseOut1(){document.getElementById("helperText1").style.display="none"}function mouseOver2(){document.getElementById("helperText2").innerHTML="Copy",document.getElementById("helperText2").style.display="inline"}function mouseOut2(){document.getElementById("helperText2").style.display="none"}function emailMouseOver(){document.getElementById("helperText3").innerHTML="Your contact email",document.getElementById("helperText3").style.display="inline"}function emailMouseOut(){document.getElementById("helperText3").style.display="none"}function priceMouseOver(){document.getElementById("helperText3").innerHTML="Minimum asking price (Optional)",document.getElementById("helperText3").style.display="inline"}function priceMouseOut(){document.getElementById("helperText3").style.display="none"}document.getElementById("ipHelper1").addEventListener("mouseover",mouseOver1),document.getElementById("ipHelper1").addEventListener("mouseout",mouseOut1),document.getElementById("ipHelper2").addEventListener("mouseover",mouseOver2),document.getElementById("ipHelper2").addEventListener("mouseout",mouseOut2),document.getElementById("emailHelper").addEventListener("mouseover",emailMouseOver),document.getElementById("emailHelper").addEventListener("mouseout",emailMouseOut),document.getElementById("priceHelper").addEventListener("mouseover",priceMouseOver),document.getElementById("priceHelper").addEventListener("mouseout",priceMouseOut);</script>
